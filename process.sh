@@ -8,7 +8,7 @@ perl -pi -e '#Promise: \“#Promise:\n\“#g' $fil
 perl -0pi -e 's/(.*\nProblem:)/About: $1/g' $fil
 perl -0777 -pi -e 's/Section.*?(About)/$1/gs' $fil
 
-perl -00 -pi -e 's/\n(?!(\"|Problem|Promise|About|Prayer))/ $1/sg' $fil #Negative Look Ahead, capture group and replace new line with space
+perl -00 -pi -e 's/\n(?!(\"|Problem|Promise|About|Prayer))/ $1/sg' $fil #Negative Look Behind, capture group and replace new line with space
 perl -pi -e "s#\. \“#\.\n\"#g"  $fil
 
 sed -i 's/"\./"/g' $fil
